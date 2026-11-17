@@ -8,7 +8,7 @@ payments in Rwanda, send payouts, and react to payments with ordinary Laravel ev
 - `Mulla::fake()`, `postMullaWebhook()` and `mulla:webhook:simulate` for testing without a network or tunnel
 - Built on [`kayko/mulla-php`](https://github.com/kaykorw/mulla-php-sdk): every SDK feature is available
 
-Requires PHP 8.1+ and Laravel 10, 11 or 12.
+Requires PHP 8.2+ and Laravel 12 or 13.
 
 ## Installation
 

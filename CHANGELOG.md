@@ -7,6 +7,7 @@ All notable changes to this project are documented here. The format follows
 
 ### Added
 
+- Supports Laravel 12 and 13 on PHP 8.2+ (Laravel 10 and 11 no longer receive security fixes).
 - Auto-discovered `MullaServiceProvider` and publishable `config/mulla.php` driven by `MULLA_*` variables.
 - `Mulla\MullaClient` container binding (alias `mulla`) and the `Mulla` facade (`Mulla::charges()`, …).
 - Webhook route (`POST /mulla/webhook`) or `Route::mullaWebhooks()` macro, with `VerifyMullaSignature` middleware.

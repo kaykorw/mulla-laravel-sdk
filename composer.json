@@ -6,21 +6,21 @@
     "keywords": ["mulla", "laravel", "payments", "mobile money", "momo", "mtn", "airtel", "rwanda", "webhooks"],
     "homepage": "https://github.com/kaykorw/mulla-laravel-sdk",
     "require": {
-        "php": ">=8.1",
-        "illuminate/cache": "^10.0 || ^11.0 || ^12.0",
-        "illuminate/console": "^10.0 || ^11.0 || ^12.0",
-        "illuminate/contracts": "^10.0 || ^11.0 || ^12.0",
-        "illuminate/http": "^10.0 || ^11.0 || ^12.0",
-        "illuminate/routing": "^10.0 || ^11.0 || ^12.0",
-        "illuminate/support": "^10.0 || ^11.0 || ^12.0",
+        "php": ">=8.2",
+        "illuminate/cache": "^12.0 || ^13.0",
+        "illuminate/console": "^12.0 || ^13.0",
+        "illuminate/contracts": "^12.0 || ^13.0",
+        "illuminate/http": "^12.0 || ^13.0",
+        "illuminate/routing": "^12.0 || ^13.0",
+        "illuminate/support": "^12.0 || ^13.0",
         "kayko/mulla-php": "^0.0.1",
         "psr/log": "^1.1 || ^2.0 || ^3.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.64",
-        "larastan/larastan": "^2.9 || ^3.0",
-        "orchestra/testbench": "^8.0 || ^9.0 || ^10.0",
-        "phpunit/phpunit": "^10.5 || ^11.0"
+        "larastan/larastan": "^3.0",
+        "orchestra/testbench": "^10.0 || ^11.0",
+        "phpunit/phpunit": "^11.5 || ^12.0"
     },
     "autoload": {
         "psr-4": {
