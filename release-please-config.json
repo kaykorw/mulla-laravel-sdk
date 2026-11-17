@@ -1,0 +1,19 @@
+{
+    "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+    "bootstrap-sha": "5dae537d8690fd7bbd13eab9c5c69c5db652178b",
+    "packages": {
+        ".": {
+            "release-type": "php",
+            "package-name": "kayko/mulla-laravel",
+            "include-component-in-tag": false,
+            "bump-minor-pre-major": true,
+            "changelog-path": "CHANGELOG.md",
+            "extra-files": [
+                {
+                    "type": "generic",
+                    "path": "src/Version.php"
+                }
+            ]
+        }
+    }
+}
