@@ -204,5 +204,4 @@ composer analyse    # PHPStan (Larastan) level 8
 composer cs         # code style
 ```
 
-Until `kayko/mulla-php` is published, it is installed from `../mulla-php` (Composer path repository).
 
