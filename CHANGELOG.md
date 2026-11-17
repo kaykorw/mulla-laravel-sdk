@@ -3,6 +3,14 @@
 All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses [Semantic Versioning](https://semver.org/).
 
+## [0.1.0](https://github.com/kaykorw/mulla-laravel-sdk/compare/v0.0.1...v0.1.0) (2026-11-17)
+
+
+### Features
+
+* Add release-please configuration and workflow for automated releases ([f11b4a1](https://github.com/kaykorw/mulla-laravel-sdk/commit/f11b4a1a7b2275c23828439b4b0ad3529bb8b640))
+* Update PHP and Laravel requirements to support versions 12 and 13 ([10c10fe](https://github.com/kaykorw/mulla-laravel-sdk/commit/10c10fea68a537ceb1201a310c8d162115ad4c6e))
+
 ## [0.0.1] - Unreleased
 
 ### Added

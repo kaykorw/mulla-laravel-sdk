@@ -3,7 +3,17 @@
     "description": "Official Laravel integration for the Mulla payment gateway (MTN MoMo & Airtel Money, Rwanda).",
     "type": "library",
     "license": "MIT",
-    "keywords": ["mulla", "laravel", "payments", "mobile money", "momo", "mtn", "airtel", "rwanda", "webhooks"],
+    "keywords": [
+        "mulla",
+        "laravel",
+        "payments",
+        "mobile money",
+        "momo",
+        "mtn",
+        "airtel",
+        "rwanda",
+        "webhooks"
+    ],
     "homepage": "https://github.com/kaykorw/mulla-laravel-sdk",
     "require": {
         "php": ">=8.2",
@@ -47,7 +57,11 @@
         "analyse": "phpstan analyse --memory-limit=1G",
         "cs": "php-cs-fixer fix --dry-run --diff",
         "cs:fix": "php-cs-fixer fix",
-        "check": ["@cs", "@analyse", "@test"]
+        "check": [
+            "@cs",
+            "@analyse",
+            "@test"
+        ]
     },
     "config": {
         "sort-packages": true

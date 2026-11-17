@@ -6,7 +6,7 @@ namespace Mulla\Laravel;
 
 final class Version
 {
-    public const PACKAGE = '0.0.1'; // x-release-please-version
+    public const PACKAGE = '0.1.0'; // x-release-please-version
     public const USER_AGENT = 'mulla-laravel/' . self::PACKAGE;
 
     private function __construct() {}
