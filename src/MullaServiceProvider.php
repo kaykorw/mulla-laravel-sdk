@@ -15,10 +15,6 @@ use Mulla\Laravel\Console\WebhookTestCommand;
 use Mulla\Laravel\Routing\WebhookRoutes;
 use Mulla\MullaClient;
 
-/**
- * Registers the Mulla client, config, webhook route and Artisan commands.
- * Auto-discovered; nothing to add to config/app.php.
- */
 final class MullaServiceProvider extends ServiceProvider
 {
     public function register(): void
@@ -58,9 +54,6 @@ final class MullaServiceProvider extends ServiceProvider
         }
     }
 
-    /**
-     * Route::mullaWebhooks('hooks/mulla') registers the verified webhook endpoint wherever you want it.
-     */
     private function registerRouteMacro(): void
     {
         if (Router::hasMacro('mullaWebhooks')) {

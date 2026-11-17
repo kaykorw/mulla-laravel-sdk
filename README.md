@@ -49,7 +49,6 @@ class CheckoutController
         ], ['idempotency_key' => $order->mulla_idempotency_key ??= Uuid::v4()]);
 
         $order->update(['mulla_charge_id' => $charge->id]);
-        // The customer approves the prompt on their phone; you are told by webhook.
     }
 }
 ```
@@ -196,16 +195,6 @@ A missing secret key only fails when Mulla is used (with a message telling you w
 `artisan` commands keep working. Run `php artisan config:clear` after changing `.env` if your
 config is cached.
 
-## Security
-
-- Webhook signatures are verified on the raw body in constant time; events without a valid
-  signature, or received while `MULLA_WEBHOOK_SECRET` is unset, are never dispatched.
-- Re-delivered events are de-duplicated by event id. Use a shared cache store (Redis, database)
-  when you run several servers.
-- Webhook bodies, API keys and checkout tokens are never written to logs.
-- Return URLs from the hosted checkout are not signed. Mark orders paid from the webhook (or by
-  retrieving the charge), never from the redirect.
-
 ## Development
 
 ```bash
@@ -217,6 +206,3 @@ composer cs         # code style
 
 Until `mulla/mulla-php` is published, it is installed from `../mulla-php` (Composer path repository).
 
-## License
-
-MIT

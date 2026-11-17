@@ -10,9 +10,6 @@ use Mulla\Exceptions\InvalidArgumentException;
 use Mulla\Laravel\Exceptions\MullaConfigurationException;
 use Mulla\MullaClient;
 
-/**
- * Factory: turns config/mulla.php into a ready MullaClient.
- */
 final class ClientFactory
 {
     public function __construct(
