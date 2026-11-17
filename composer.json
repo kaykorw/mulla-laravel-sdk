@@ -1,10 +1,10 @@
 {
-    "name": "mulla/mulla-laravel",
+    "name": "kayko/mulla-laravel",
     "description": "Official Laravel integration for the Mulla payment gateway (MTN MoMo & Airtel Money, Rwanda).",
     "type": "library",
     "license": "MIT",
     "keywords": ["mulla", "laravel", "payments", "mobile money", "momo", "mtn", "airtel", "rwanda", "webhooks"],
-    "homepage": "https://github.com/mulla/mulla-laravel",
+    "homepage": "https://github.com/kaykorw/mulla-laravel-sdk",
     "require": {
         "php": ">=8.1",
         "illuminate/cache": "^10.0 || ^11.0 || ^12.0",
@@ -13,7 +13,7 @@
         "illuminate/http": "^10.0 || ^11.0 || ^12.0",
         "illuminate/routing": "^10.0 || ^11.0 || ^12.0",
         "illuminate/support": "^10.0 || ^11.0 || ^12.0",
-        "mulla/mulla-php": "^0.0.1 || dev-main",
+        "kayko/mulla-php": "^0.0.1 || dev-main",
         "psr/log": "^1.1 || ^2.0 || ^3.0"
     },
     "require-dev": {

@@ -6,14 +6,14 @@ payments in Rwanda, send payouts, and react to payments with ordinary Laravel ev
 - Configured from `.env`, injectable `MullaClient` and a `Mulla` facade
 - Verified, de-duplicated webhooks delivered as events (`ChargeSucceeded`, `PayoutFailed`, …)
 - `Mulla::fake()`, `postMullaWebhook()` and `mulla:webhook:simulate` for testing without a network or tunnel
-- Built on [`mulla/mulla-php`](https://github.com/mulla/mulla-php): every SDK feature is available
+- Built on [`kayko/mulla-php`](https://github.com/kaykorw/mulla-php-sdk): every SDK feature is available
 
 Requires PHP 8.1+ and Laravel 10, 11 or 12.
 
 ## Installation
 
 ```bash
-composer require mulla/mulla-laravel
+composer require kayko/mulla-laravel
 php artisan mulla:install
 ```
 
@@ -66,7 +66,7 @@ Mulla::payouts()->list(['status' => 'COMPLETED']);
 
 Every service of the PHP SDK works the same way: `charges`, `checkout`, `payouts`, `recharges`,
 `invoices`, `customers`, `webhookEndpoint`, `referenceData`. See the
-[PHP SDK README](https://github.com/mulla/mulla-php#readme) for all methods, models and errors.
+[PHP SDK README](https://github.com/kaykorw/mulla-php-sdk#readme) for all methods, models and errors.
 
 See [`examples/`](examples) for a full checkout controller and listener.
 
@@ -204,5 +204,5 @@ composer analyse    # PHPStan (Larastan) level 8
 composer cs         # code style
 ```
 
-Until `mulla/mulla-php` is published, it is installed from `../mulla-php` (Composer path repository).
+Until `kayko/mulla-php` is published, it is installed from `../mulla-php` (Composer path repository).
 
