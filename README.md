@@ -83,7 +83,7 @@ class PaymentController
     {
         $charge = $mulla->charges->initiate([
             'provider'     => 'MTN_RW',
-            'phone_number' => '250788000000',
+            'phone_number' => '+250788000000',
             'amount'       => $order->total, // RWF
             'reason'       => "Order #{$order->id}",
         ]);
@@ -149,7 +149,7 @@ Mulla::charges()->retrieve($id); // same as $mulla->charges->retrieve($id)
 ### Amounts, phone numbers and field names
 
 - **Amounts** are whole Rwandan francs (RWF), not cents. The minimum is 10.
-- **Phone numbers** use the international format without `+`, for example `250788000000`.
+- **Phone numbers** must use the international format with `+`, for example `+250788000000`. Other formats (`250788000000`, `0788000000`) are rejected with `VALIDATION_FAILED`.
 - **Arrays use the API's field names** in snake_case (`phone_number`, `success_url`). The API rejects unknown fields.
 
 ## Guides
@@ -169,7 +169,7 @@ public function pay(Order $order, MullaClient $mulla)
 
     $charge = $mulla->charges->initiate([
         'provider'     => 'MTN_RW', // or AIRTEL_RW
-        'phone_number' => '250788000000',
+        'phone_number' => '+250788000000',
         'amount'       => $order->total,
         'reason'       => "Order #{$order->id}",
         'metadata'     => ['order_id' => $order->id],
@@ -274,7 +274,7 @@ Every service of the PHP SDK is available on the client and the facade:
 Mulla::payouts()->initiate([
     'provider'     => 'MTN_RW',
     'amount'       => 15000,
-    'phone_number' => '250788000000',
+    'phone_number' => '+250788000000',
     'reason'       => 'Refund for order #1001',
 ]);
 
@@ -300,7 +300,7 @@ class CheckoutTest extends TestCase
         $mulla = $this->fakeMulla(); // or Mulla::fake()
         $mulla->pushJson(['id' => 'ch_1', 'status' => 'PENDING', 'amount' => 5000]);
 
-        $this->post('/orders/1/pay', ['provider' => 'MTN_RW', 'phone_number' => '250788000000']);
+        $this->post('/orders/1/pay', ['provider' => 'MTN_RW', 'phone_number' => '+250788000000']);
 
         $mulla->assertSent(fn ($request) => str_ends_with($request->url, '/charges/initiate'));
     }
@@ -408,6 +408,7 @@ All events are in `Mulla\Laravel\Events`. Each has a public `$event` property (`
 | Listener never runs, but the route returns `200`         | The event was already handled (duplicate), or the listener isn't registered. Check `php artisan event:list`. |
 | Queued listener didn't run                               | No queue worker is running. Start one with `php artisan queue:work`.                                         |
 | `PermissionException` with `API_KEY_SCOPE_DENIED`        | The key lacks the scope for that service. Add it in the dashboard.                                           |
+| `VALIDATION_FAILED` with "Invalid Phone Number"          | The number has no leading `+`. Send `+250788000000`, not `250788000000` or `0788000000`.                     |
 | `InvalidRequestException` with `VALIDATION_FAILED`       | A field is invalid, misspelled or unknown. Array keys must be snake_case, such as `phone_number`.            |
 
 For other SDK errors, see the [PHP SDK troubleshooting table](https://github.com/kaykorw/mulla-php-sdk#troubleshooting).
