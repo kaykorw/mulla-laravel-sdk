@@ -416,12 +416,13 @@ For other SDK errors, see the [PHP SDK troubleshooting table](https://github.com
 
 <!-- x-release-please-start-version -->
 
-| Package version | Mulla PHP SDK | Laravel | Tested in CI on                                          |
-| --------------- | ------------- | ------- | -------------------------------------------------------- |
-| 0.0.1           | `^0.0.1`      | 12, 13  | PHP 8.2–8.4 with Laravel 12; PHP 8.3–8.5 with Laravel 13 |
+| Package version | Laravel | Tested in CI on                                          |
+| --------------- | ------- | -------------------------------------------------------- |
+| 0.0.1           | 12, 13  | PHP 8.2–8.4 with Laravel 12; PHP 8.3–8.5 with Laravel 13 |
 
 <!-- x-release-please-end -->
 
+- Built on `kayko/mulla-php` (the version range is in [composer.json](composer.json)).
 - The package follows [semantic versioning](https://semver.org). Until 1.0.0, a minor release (0.**x**.0) may contain breaking changes. Patch releases never do.
 - Every change is listed in [CHANGELOG.md](CHANGELOG.md).
 
